@@ -34,3 +34,61 @@
 .landing-wrapper { overflow-x: hidden; } .landing-main-content { margin-top: 0 !important; padding-top: 40px; }
 .landing-wrapper { height: 100vh; overflow-y: auto; overflow-x: hidden; }
 .overlay { position: fixed !important; inset: 0; z-index: 100; } .tournament-modal { max-height: 85vh; overflow-y: auto; }
+
+/* Fluxo de lançamento pensado para o telefone do juiz. */
+.mobile-quick-nav{display:none}
+.judge-dashboard-link{flex-shrink:0}
+.match-card-head{display:flex;align-items:center;justify-content:space-between}
+.match-card-head small{font-size:9px;color:#858994;font-weight:600;letter-spacing:0;text-transform:none}
+.match-card-body{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center}
+.match-player{display:grid;min-width:0;gap:4px}
+.match-player>span{font-size:9px;font-weight:800;letter-spacing:.8px;color:#aeb1b9}
+.match-player b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.black-player{text-align:right}
+.match-vs{margin:0}
+@media (max-width: 700px){
+  .app-shell main{padding-bottom:82px}
+  .view-juiz .floating-add{display:none}
+  .crumb{justify-content:center;min-width:0}
+  .crumb strong{display:none}
+  .crumb-juiz::after{content:'Bancada do juiz';color:#f1f2f4;font-size:12px;font-weight:800}
+  .crumb-dashboard::after{content:'Dashboard ao vivo';color:#f1f2f4;font-size:12px;font-weight:800}
+  .top-actions .public-link{min-height:40px}
+  .top-actions .public-link span{display:none}
+  .judge-bench{padding:20px 14px 96px}
+  .judge-bench .hero{margin-bottom:18px}
+  .judge-bench .hero h1{font-size:27px;line-height:1.12;letter-spacing:-1px}
+  .judge-bench .hero p{font-size:13px;line-height:1.5;max-width:250px}
+  .judge-dashboard-link{padding:10px;align-self:flex-start}
+  .judge-dashboard-link svg{margin:0}
+  .judge-dashboard-link{font-size:0}
+  .judge-bench .bench-grid{grid-template-columns:1fr;gap:12px;margin-top:0}
+  .match-card{min-height:146px;border-radius:14px}
+  .match-card:hover{transform:none;box-shadow:none}
+  .match-card-head{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;font-size:12px;color:#d9dbe0}
+  .match-card-head small{font-size:10px;color:#858994;font-weight:600;letter-spacing:0;text-transform:none}
+  .match-card-body{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center;padding:18px 16px;gap:8px}
+  .match-player{display:grid;font-size:16px;min-width:0;gap:5px}
+  .match-player span{font-size:9px;font-weight:800;letter-spacing:.8px;color:#aeb1b9}
+  .match-player b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.25}
+  .black-player{text-align:right}
+  .black-player span{color:#858994}
+  .match-vs{font-size:10px;margin:0;color:#737781}
+  .match-card-foot{padding:12px 16px;font-size:12px}
+  .match-card:active{border-color:#d7f568;background:#202319}
+  .mobile-quick-nav{position:fixed;z-index:10;bottom:0;left:0;right:0;height:68px;display:grid;grid-template-columns:1fr 1fr;padding:8px 16px max(8px, env(safe-area-inset-bottom));gap:8px;background:rgba(21,22,26,.97);border-top:1px solid #292a30;backdrop-filter:blur(12px)}
+  .mobile-quick-nav button{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;background:#202126;color:#a7aab2;font-size:12px;font-weight:800}
+  .mobile-quick-nav button.active{background:#d7f568;color:#1d2116}
+  .floating-add{bottom:84px;right:14px}
+  .result-modal{width:min(100%,440px);padding:24px 16px}
+  .result-modal h2{font-size:21px}
+  .versus{padding:16px 12px;margin:18px 0}
+  .versus b{max-width:42%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .result-options{gap:9px}
+  .result-options button{min-height:72px;padding:10px 6px}
+  .result-options b{font-size:20px}
+  .result-modal .wide{min-height:48px;font-size:15px}
+  .share-modal .share-link span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;max-width:calc(100vw - 115px)}
+}
+
+@media (min-width:701px){.judge-bench .hero{align-items:flex-end}}
