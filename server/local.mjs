@@ -109,4 +109,4 @@ createServer(async (req,res) => {
   if (existsSync(file) && file.startsWith(join(root,'dist'))) { res.writeHead(200,{ 'content-type':mime[extname(file)] || 'application/octet-stream' }); return createReadStream(file).pipe(res) }
   if (existsSync(join(root,'dist','index.html'))) { res.writeHead(200,{ 'content-type':'text/html' }); return createReadStream(join(root,'dist','index.html')).pipe(res) }
   json(res,404,{error:'Execute npm run build antes de npm start.'})
-}).listen(3001, '127.0.0.1', () => console.log('XequeMate local: http://localhost:3001'))
+}).listen(process.env.PORT ? Number(process.env.PORT) : 3001, '0.0.0.0', () => console.log(`XequeMate rodando na porta ${process.env.PORT ? Number(process.env.PORT) : 3001}`))
