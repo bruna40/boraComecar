@@ -33,3 +33,4 @@
 
 .landing-wrapper { overflow-x: hidden; } .landing-main-content { margin-top: 0 !important; padding-top: 40px; }
 .landing-wrapper { height: 100vh; overflow-y: auto; overflow-x: hidden; }
+.overlay { position: fixed !important; inset: 0; z-index: 100; } .tournament-modal { max-height: 85vh; overflow-y: auto; }

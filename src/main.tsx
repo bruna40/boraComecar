@@ -59,7 +59,7 @@ function App() {
 
   return <div className="app-shell">
     <aside className={menu ? 'sidebar open' : 'sidebar'}>
-      <div className="brand"><div className="brand-mark"><Swords size={22} /></div><span>Xeque<span className="accent">Mate</span></span><button className="mobile-close" onClick={() => setMenu(false)}><X /></button></div>
+      <div className="brand" style={{cursor:'pointer'}} onClick={()=>window.location.href='/'}><div className="brand-mark"><Swords size={22} /></div><span>Xeque<span className="accent">Mate</span></span><button className="mobile-close" onClick={(e)=>{e.stopPropagation();setMenu(false)}}><X /></button></div>
       <nav>
         <button className={`nav-item ${aba === 'visao-geral' ? 'active' : ''}`} onClick={() => navigate('visao-geral')}><LayoutDashboard size={19} />Visão geral</button>
         <button className={`nav-item ${aba === 'jogadores' ? 'active' : ''}`} onClick={() => navigate('jogadores')}><Users size={19} />Jogadores</button>
@@ -260,9 +260,8 @@ function Landing({onCreate,modal,close,onCreated}:{onCreate:()=>void;modal:'new'
       )}
     </main>
 
-    <footer className="landing-footer">
-      <span>♟ XequeMate — Motor local de torneios</span>
-    </footer>
+
+
 
     {modal==='new' && <NewTournament onClose={close} onCreated={onCreated}/>}
   </div>
